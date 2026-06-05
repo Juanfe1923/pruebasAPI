@@ -16,7 +16,9 @@ app.set('view engine', 'ejs');
 conexion
   .then(() => console.log("Conexion exitosa a MongoDB"))
   .catch(err => console.log(err));
-
+app.get('/', (req, res) => {
+  res.render('pages/index.ejs');
+});
 app.get('/clientes', clienteController.consultar);
 app.get('/clientes/:id', clienteController.obtenerPorId);
 app.post('/clientes', clienteController.crear);
