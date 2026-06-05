@@ -11,6 +11,7 @@ const servicioController = require("./controllers/servicio.controller");
 const app = express();
 
 app.use(express.json());
+app.set('view engine', 'ejs');
 
 conexion
   .then(() => console.log("Conexion exitosa a MongoDB"))
